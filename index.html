@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工厂区域</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: auto; /* 手机端内容多时有滚动条 */
+      padding: 10px; /* 避免边缘方块被遮挡 */
+      box-sizing: border-box; /* 防止padding撑大容器 */
+    }
+
+    .area {
+      position: absolute;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      font-size: 14px; /* 基础字体大小 */
+    }
+
+    .area:hover {
+      transform: scale(1.05);
+    }
+
+    /* ==== 默认样式（PC端，屏幕宽度 ≥ 768px）==== */
+    .check-training {
+      top: 10%;
+      left: 32%;
+      width: 150px;
+      height: 80px;
+      background-color: #d2b48c;
+    }
+
+    .engineering-maintenance {
+      top: 10%;
+      left: 57%;
+      width: 150px;
+      height: 80px;
+      background-color: #9370db;
+    }
+
+    .quality-training {
+      top: 10%;
+      left: 80%;
+      width: 150px;
+      height: 80px;
+      background-color: #90ee90;
+    }
+
+    .safety-training {
+      top: 35%;
+      left: 80%;
+      width: 150px;
+      height: 80px;
+      background-color: #87ceeb;
+    }
+
+    .training-reading {
+      top: 60%;
+      left: 80%;
+      width: 150px;
+      height: 80px;
+      background-color: #f4a460;
+    }
+
+    .light-inspection-training {
+      top: 35%;
+      left: 10%;
+      width: 150px;
+      height: 80px;
+      background-color: #cd853f;
+    }
+
+    .changing-cleaning-training {
+      top: 60%;
+      left: 10%;
+      width: 150px;
+      height: 80px;
+      background-color: #dda0dd;
+    }
+
+    .aseptic-operation {
+      top: 40%;
+      left: 43%;
+      width: 200px;
+      height: 200px;
+      background-color: #98fb98;
+    }
+
+    .entrance-exit {
+      top: 70%;
+      left: 70%;
+      width: 80px;
+      height: 120px;
+      background-color: #cd5c5c;
+      color: white;
+    }
+
+    /* ==== 媒体查询（手机端，屏幕宽度 < 768px）==== */
+    @media (max-width: 767px) {
+      .area {
+        width: 30vw; /* 宽度改为屏幕的30%（相对单位，随屏幕变化） */
+        height: 12vh; /* 高度改为屏幕的12% */
+        font-size: 12px; /* 字体缩小，避免文字溢出 */
+      }
+
+      /* 调整手机端方块位置（避免重叠，更紧凑） */
+      .check-training {
+        top: 5%;
+        left: 10%;
+      }
+
+      .engineering-maintenance {
+        top: 5%;
+        left: 60%;
+      }
+
+      .quality-training {
+        top: 25%;
+        left: 10%;
+      }
+
+      .safety-training {
+        top: 25%;
+        left: 60%;
+      }
+
+      .training-reading {
+        top: 45%;
+        left: 10%;
+      }
+
+      .light-inspection-training {
+        top: 45%;
+        left: 60%;
+      }
+
+      .changing-cleaning-training {
+        top: 65%;
+        left: 10%;
+      }
+
+      .aseptic-operation {
+        top: 65%;
+        left: 60%;
+        width: 30vw; /* 无菌区宽度也改为相对单位 */
+        height: 30vw;
+      }
+
+      .entrance-exit {
+        top: 85%;
+        left: 35%;
+        width: 30vw;
+        height: 12vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="check_training.html" class="area check-training">校验培训区</a>
+    <a href="engineering_maintenance.html" class="area engineering-maintenance">工程维护区</a>
+    <a href="quality_training.html" class="area quality-training">质量培训区</a>
+    <a href="safety_training.html" class="area safety-training">安全培训区</a>
+    <a href="training_reading.html" class="area training-reading">培训阅览室</a>
+    <a href="light_inspection_training.html" class="area light-inspection-training">灯检培训区</a>
+    <a href="changing_cleaning_training.html" class="area changing-cleaning-training">更衣和清洁培训区</a>
+    <a href="aseptic_operation.html" class="area aseptic-operation">无菌操作区</a>
+    <div class="area entrance-exit">参观出入口</div>
+  </div>
+</body>
+
+</html>
