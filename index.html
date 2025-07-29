@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!-- 视口标签必须正确，确保缩放基础 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>工厂区域</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: auto;
+      padding: 5px;
+      box-sizing: border-box; /* 关键：避免padding增加容器宽度 */
+    }
+
+    .area {
+      position: absolute;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease; /* 缩放过渡更自然 */
+      font-size: 14px;
+      /* 基础尺寸：用min/max确保不超出范围 */
+      min-width: 120px;
+      min-height: 60px;
+    }
+
+    .area:hover {
+      transform: scale(1.05);
+    }
+
+    /* ==== PC端样式（默认，屏幕≥768px）==== */
+    /* 尺寸和位置用px，适合大屏 */
+    .check-training {
+      top: 10%; left: 32%; width: 150px; height: 80px; background: #d2b48c;
+    }
+    .engineering-maintenance {
+      top: 10%; left: 57%; width: 150px; height: 80px; background: #9370db;
+    }
+    .quality-training {
+      top: 10%; left: 80%; width: 150px; height: 80px; background: #90ee90;
+    }
+    .safety-training {
+      top: 35%; left: 80%; width: 150px; height: 80px; background: #87ceeb;
+    }
+    .training-reading {
+      top: 60%; left: 80%; width: 150px; height: 80px; background: #f4a460;
+    }
+    .light-inspection-training {
+      top: 35%; left: 10%; width: 150px; height: 80px; background: #cd853f;
+    }
+    .changing-cleaning-training {
+      top: 60%; left: 10%; width: 150px; height: 80px; background: #dda0dd;
+    }
+    .aseptic-operation {
+      top: 40%; left: 43%; width: 200px; height: 200px; background: #98fb98;
+    }
+    .entrance-exit {
+      top: 70%; left: 70%; width: 80px; height: 120px; background: #cd5c5c;
+    }
+
+    /* ==== 手机端样式（强制缩放，屏幕≤767px）==== */
+    @media (max-width: 767px) {
+      /* 1. 强制覆盖尺寸：用vw/vh确保随屏幕缩放 */
+      .area {
+        width: 38vw !important; /* 占屏幕宽度38%，!important确保覆盖PC样式 */
+        height: 12vh !important; /* 占屏幕高度12% */
+        font-size: 3vw !important; /* 字体随屏幕宽度缩放 */
+        min-width: auto !important; /* 取消最小宽度限制 */
+      }
+
+      /* 2. 调整位置：用%相对定位，避免固定px导致偏移 */
+      .check-training { top: 5%; left: 5% !important; }
+      .engineering-maintenance { top: 5%; left: 55% !important; }
+      .quality-training { top: 22%; left: 5% !important; }
+      .safety-training { top: 22%; left: 55% !important; }
+      .training-reading { top: 39%; left: 5% !important; }
+      .light-inspection-training { top: 39%; left: 55% !important; }
+      .changing-cleaning-training { top: 56%; left: 5% !important; }
+      .aseptic-operation { 
+        top: 56%; left: 55% !important; 
+        width: 38vw !important; 
+        height: 38vw !important; /* 正方形：宽高均为屏幕38% */
+      }
+      .entrance-exit { 
+        top: 78%; left: 30% !important; 
+        width: 40vw !important;
+        height: 12vh !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <a href="check_training.html" class="area check-training">校验培训区</a>
+    <a href="engineering_maintenance.html" class="area engineering-maintenance">工程维护区</a>
+    <a href="quality_training.html" class="area quality-training">质量培训区</a>
+    <a href="safety_training.html" class="area safety-training">安全培训区</a>
+    <a href="training_reading.html" class="area training-reading">培训阅览室</a>
+    <a href="light_inspection_training.html" class="area light-inspection-training">灯检培训区</a>
+    <a href="changing_cleaning_training.html" class="area changing-cleaning-training">更衣和清洁培训区</a>
+    <a href="aseptic_operation.html" class="area aseptic-operation">无菌操作区</a>
+    <div class="area entrance-exit">参观出入口</div>
+  </div>
+</body>
+</html>
